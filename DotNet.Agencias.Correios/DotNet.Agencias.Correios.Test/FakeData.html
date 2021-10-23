@@ -1,0 +1,693 @@
+﻿<style>
+
+    .sombreado {
+        background-color: #fafafa;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: auto;
+        background: white;
+        display: block;
+        padding: 0.25rem 0;
+    }
+
+    table {
+        /* margin: 1rem auto; */
+        border-collapse: collapse;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tr {
+        background: white;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    td {
+        flex: 1 1 100%;
+        order: 1;
+        display: block;
+        text-align: left;
+    }
+
+    tr td table tbody tr {
+        box-shadow: none;
+    }
+
+        tr td table tbody tr:nth-child(2n) {
+            background-color: #fafafa;
+        }
+
+    .link_telefone {
+        text-decoration: none;
+    }
+
+    th:first-child {
+        border-top-left-radius: 4px;
+    }
+
+    .detalhe-agencia {
+        background-color: #fafafa;
+    }
+
+        .detalhe-agencia .td-detalhe-agencia {
+            background: #fafafa;
+        }
+
+        .detalhe-agencia table:hover {
+            background: #fafafa;
+        }
+
+    .td-detalhe-agencia {
+        width: 100%;
+    }
+
+    .mostra_detalhe {
+        display: contents;
+    }
+
+    .oculta {
+        display: none;
+    }
+
+    .nome-agencia {
+        width: 100%;
+        float: left;
+        font-weight: bold;
+        padding-bottom: 10px;
+    }
+
+    .endereco-agencia {
+        width: 100%;
+        float: left;
+        font-weight: bold;
+        padding-bottom: 10px;
+    }
+
+    .situacao-agencia {
+        width: 100%;
+        float: left;
+        font-weight: bold;
+        padding-top: 10px;
+    }
+
+    .agencia_desc {
+        width: 100%;
+    }
+
+    .lista-servico {
+        float: left;
+        width: 100%;
+    }
+
+    .rota {
+        padding: 0 0 0 5px;
+        width: 100%;
+        vertical-align: middle;
+    }
+
+        .rota img {
+            margin-top: 25px;
+        }
+
+    .clique-retire {
+        width: 100%;
+        float: left;
+        color: #0083CA;
+        font-weight: bold;
+        padding-top: 10px;
+    }
+
+    .mensagem-clique-retire {
+        width: 100%;
+        float: left;
+        font-weight: bold;
+        padding: 10px;
+        border: solid black 1px;
+        border-radius: 15px;
+        ;
+    }
+
+    .destaque-cr {
+        color: #0083CA;
+    }
+
+    .negrito {
+        font-weight: bold;
+    }
+
+    .celula-base {
+        padding: 0;
+        border-top: 1px solid #0071ad;
+        /*border-left: 1px solid #0071ad;
+    border-right: 1px solid #0071ad;*/
+        border-bottom: 1px solid #0071ad;
+    }
+
+    @media (min-width:1024px) {
+
+        .tbody-interno {
+            width: 100%;
+            display: inline-block;
+        }
+
+        tbody.tbody-interno tr {
+            box-shadow: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            background: white;
+            display: block;
+            padding: 0;
+        }
+
+        thead {
+            display: block;
+        }
+
+        tbody {
+            display: block;
+        }
+
+        th {
+            font-weight: normal;
+            background: #0071ad;
+            color: white;
+            line-height: 2rem;
+            font-size: 0.9rem;
+        }
+
+        tr {
+            background: white;
+            flex-wrap: wrap;
+            box-shadow: none;
+        }
+
+        .tr-base {
+            display: block;
+        }
+
+        td {
+            flex: auto;
+            order: 1;
+            display: block;
+            text-align: left;
+            margin-bottom: 0;
+        }
+
+        .agencia_desc {
+            width: 65%;
+        }
+
+        .lista-servico {
+            float: left;
+            width: 25%;
+        }
+
+        .rota {
+            width: 10%;
+        }
+
+        .rota-th {
+            width: 10%;
+            padding: 0 0 0 5px;
+        }
+        /* .tbody-interno:nth-child(n){
+            border-bottom: 1px solid;
+            box-shadow: #00416B 0 -7px 5px;
+            border-radius: 5px;
+        }
+
+        #primeiro.tbody-interno:nth-child(1){
+            border: 1px solid #00416B;
+            box-shadow: transparent 0 -1px 1px;
+            border-radius: 5px;
+        }  */
+        .celula-base {
+            padding: 0;
+            border-top: 1px solid #0071ad;
+            /*border-left: 1px solid #0071ad;
+            border-right: 1px solid #0071ad;*/
+            border-bottom: 1px solid #0071ad;
+        }
+
+        .mostra_detalhe {
+            display: contents;
+        }
+
+        .oculta {
+            display: none;
+        }
+    }
+</style>
+<table>
+    <thead>
+        <tr>
+            <th class="agencia_desc">Agência</th>
+            <th class="lista-servico">Serviços</th>
+            <th class="rota-th">Rota</th>
+        </tr>
+    </thead>
+    <tbody>
+        <input type="hidden" name="valida_form" id="valida_form" value="valida_form">
+
+        <tr id="base-00024419" class="tr-base">
+            <td colspan="3" class="celula-base">
+                <table>
+                    <tbody class="tbody-interno" id="primeiro">
+                        <tr>
+                            <td class="agencia_desc">
+                                <!--a href="#"-->
+                                <span class="nome-agencia" onclick="mostraDetalhe('00024419');">AC CENTRAL DE SAO PAULO</span>
+                                <span class="endereco-agencia" onclick="mostraDetalhe('00024419');">PRACA DO CORREIO, SN</span>
+                                <!--/a-->
+                                <span class="clique-retire">
+                                    <span onclick="mostraDetalhe('00024419');">Para o Clique e Retire dos Correios utilize o CEP: <span class="destaque-cr">01031-959</span></span>
+                                    <img style="vertical-align: middle" src="lib/img/info_clique_retire.jpg" onclick="mostraMensagemCliqueRetire('00024419')">
+                                </span>
+                                <span class="mensagem-clique-retire oculta" id="00024419">
+                                    Não está em casa para receber sua encomenda e quer retirar na Agência dos Correios <span class="destaque-cr">AC CENTRAL DE SAO PAULO</span> ? <br>
+                                    Utilize gratuitamente o serviço Clique e Retire dos Correios.<br>
+                                    Indique o CEP <span class="destaque-cr">01031-959</span> e o endereço da <span class="destaque-cr">PRACA DO CORREIO, SN</span> em suas compras na internet.<br>
+                                    <a href="https://www.correios.com.br/enviar-e-receber/encomendas/clique-e-retire#tab-1" target="_blank">Clique e retire dos Correios!</a> Simples assim!
+                                </span>
+                                <span class="situacao-agencia" onclick="mostraDetalhe('00024419');">FECHADA - Abre Segunda às 10:00</span>
+                            </td>
+
+                            <td class="lista-servico">
+                                <span class="certificado" style="width: 100%; display:inline-block; padding-top: 5px;"><img style="vertical-align: middle" src="lib/img/certificado_digital.jpg"><label style="vertical-align: middle; margin-left: 10px;">Certificação Digital</label></span>
+
+                            </td>
+                            <td class="rota">
+                                <a class="maps" href="https://www.google.com/maps?saddr=-23.544201 ,-46.636301&daddr=-23.544201,-46.636301" target="_blank" title="Definir Rota">
+                                    <img src="lib/img/rota.jpg" width="50em" height="50em">
+                                </a>
+
+                            </td>
+                        </tr>
+                        <tr id="detalhe-00024419" class="oculta">
+                            <td class="detalhe-agencia td-detalhe-agencia" colspan="3">
+                                <table class="sombreado">
+                                    <tr class="sombreado"><td class="td-detalhe-agencia"> Bairro: CENTRO</td></tr>
+                                    <tr class="sombreado"><td class="td-detalhe-agencia">CEP: 01031-970</td></tr>
+                                    <tr class="sombreado">
+                                        <td class="td-detalhe-agencia">
+                                            Telefone: <BR><a class="link_telefone" href="tel:+55-11-2102-3639">55 (11) 2102-3639</a><BR><a class="link_telefone" href="tel:+55-11-2102-3641">55 (11) 2102-3641</a><BR><a class="link_telefone" href="tel:+55-11-2102-3645">55 (11) 2102-3645</a><BR><a class="link_telefone" href="tel:+55-11-2102-3650">55 (11) 2102-3650</a><BR><a class="link_telefone" href="tel:+55-11-2102-3654">55 (11) 2102-3654</a><BR><a class="link_telefone" href="tel:+55-11-2102-3657">55 (11) 2102-3657</a>
+                                        </td>
+                                    </tr>
+                                    <tr class="sombreado">
+                                        <td class="td-detalhe-agencia">
+                                            Segunda a sexta:<br>10:00 às 18:00
+                                        </td>
+                                    </tr>
+
+
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <input type="hidden" name="plantao_sabado" value="0">
+                    <input type="hidden" name=plantao_domingo" value="0">
+                    <input type="hidden" name="sabado" value="0">
+                    <input type="hidden" name="domingo" value="0">
+
+                    <input type="hidden" name="certificado" value="1">
+                    <input type="hidden" name="cpf" value="0">
+                    <input type="hidden" name="achados" value="0">
+                    <input type="hidden" name="guiches" value="0">
+
+                    <input type="hidden" name="atendimento" value="0">
+                </table>
+            </td>
+        </tr>
+
+
+
+        <tr id="base-00024703" class="tr-base">
+            <td colspan="3" class="celula-base">
+                <table>
+                    <tbody class="tbody-interno">
+                        <tr>
+                            <td class="agencia_desc">
+                                <!--a href="#"-->
+                                <span class="nome-agencia" onclick="mostraDetalhe('00024703');">AC FLORENCIO DE ABREU</span>
+                                <span class="endereco-agencia" onclick="mostraDetalhe('00024703');">RUA FLORENCIO DE ABREU, 591</span>
+                                <!--/a-->
+                                <span class="clique-retire">
+                                    <span onclick="mostraDetalhe('00024703');">Para o Clique e Retire dos Correios utilize o CEP: <span class="destaque-cr">01029-959</span></span>
+                                    <img style="vertical-align: middle" src="lib/img/info_clique_retire.jpg" onclick="mostraMensagemCliqueRetire('00024703')">
+                                </span>
+                                <span class="mensagem-clique-retire oculta" id="00024703">
+                                    Não está em casa para receber sua encomenda e quer retirar na Agência dos Correios <span class="destaque-cr">AC FLORENCIO DE ABREU</span> ? <br>
+                                    Utilize gratuitamente o serviço Clique e Retire dos Correios.<br>
+                                    Indique o CEP <span class="destaque-cr">01029-959</span> e o endereço da <span class="destaque-cr">RUA FLORENCIO DE ABREU, 591</span> em suas compras na internet.<br>
+                                    <a href="https://www.correios.com.br/enviar-e-receber/encomendas/clique-e-retire#tab-1" target="_blank">Clique e retire dos Correios!</a> Simples assim!
+                                </span>
+                                <span class="situacao-agencia" onclick="mostraDetalhe('00024703');">FECHADA - Abre Segunda às 09:00</span>
+                            </td>
+
+                            <td class="lista-servico">
+                                <span class="certificado" style="width: 100%; display:inline-block; padding-top: 5px;"><img style="vertical-align: middle" src="lib/img/certificado_digital.jpg"><label style="vertical-align: middle; margin-left: 10px;">Certificação Digital</label></span>
+
+                            </td>
+                            <td class="rota">
+                                <a class="maps" href="https://www.google.com/maps?saddr=-23.537471 ,-46.633102&daddr=-23.537471,-46.633102" target="_blank" title="Definir Rota">
+                                    <img src="lib/img/rota.jpg" width="50em" height="50em">
+                                </a>
+
+                            </td>
+                        </tr>
+                        <tr id="detalhe-00024703" class="oculta">
+                            <td class="detalhe-agencia td-detalhe-agencia" colspan="3">
+                                <table class="sombreado">
+                                    <tr class="sombreado"><td class="td-detalhe-agencia"> Bairro: CENTRO</td></tr>
+                                    <tr class="sombreado"><td class="td-detalhe-agencia">CEP: 01029-970</td></tr>
+                                    <tr class="sombreado">
+                                        <td class="td-detalhe-agencia">
+                                            Telefone: <BR><a class="link_telefone" href="tel:+55-11-4313--9741">55 (11) 4313--9741</a><BR><a class="link_telefone" href="tel:+55-11-4313--9741">55 (11) 4313--9741</a>
+                                        </td>
+                                    </tr>
+                                    <tr class="sombreado">
+                                        <td class="td-detalhe-agencia">
+                                            Segunda a sexta:<br>09:00 às 17:00
+                                        </td>
+                                    </tr>
+
+
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <input type="hidden" name="plantao_sabado" value="0">
+                    <input type="hidden" name=plantao_domingo" value="0">
+                    <input type="hidden" name="sabado" value="0">
+                    <input type="hidden" name="domingo" value="0">
+
+                    <input type="hidden" name="certificado" value="1">
+                    <input type="hidden" name="cpf" value="0">
+                    <input type="hidden" name="achados" value="0">
+                    <input type="hidden" name="guiches" value="0">
+
+                    <input type="hidden" name="atendimento" value="0">
+                </table>
+            </td>
+        </tr>
+
+
+
+        <tr id="base-00424430" class="tr-base">
+            <td colspan="3" class="celula-base">
+                <table>
+                    <tbody class="tbody-interno">
+                        <tr>
+                            <td class="agencia_desc">
+                                <!--a href="#"-->
+                                <span class="nome-agencia" onclick="mostraDetalhe('00424430');">AGF BASILIO JAFET</span>
+                                <span class="endereco-agencia" onclick="mostraDetalhe('00424430');">RUA CAVALHEIRO BASILIO JAFET, 191</span>
+                                <!--/a-->
+                                <span class="clique-retire">
+                                    <span onclick="mostraDetalhe('00424430');">Para o Clique e Retire dos Correios utilize o CEP: <span class="destaque-cr">01022-959</span></span>
+                                    <img style="vertical-align: middle" src="lib/img/info_clique_retire.jpg" onclick="mostraMensagemCliqueRetire('00424430')">
+                                </span>
+                                <span class="mensagem-clique-retire oculta" id="00424430">
+                                    Não está em casa para receber sua encomenda e quer retirar na Agência dos Correios <span class="destaque-cr">AGF BASILIO JAFET</span> ? <br>
+                                    Utilize gratuitamente o serviço Clique e Retire dos Correios.<br>
+                                    Indique o CEP <span class="destaque-cr">01022-959</span> e o endereço da <span class="destaque-cr">RUA CAVALHEIRO BASILIO JAFET, 191</span> em suas compras na internet.<br>
+                                    <a href="https://www.correios.com.br/enviar-e-receber/encomendas/clique-e-retire#tab-1" target="_blank">Clique e retire dos Correios!</a> Simples assim!
+                                </span>
+                                <span class="situacao-agencia" onclick="mostraDetalhe('00424430');">Fechada - Agência Sem Expediente</span>
+                            </td>
+
+                            <td class="lista-servico">
+                            </td>
+                            <td class="rota">
+                                <a class="maps" href="https://www.google.com/maps?saddr=-23.5442325 ,-46.6307124&daddr=-23.5442325,-46.6307124" target="_blank" title="Definir Rota">
+                                    <img src="lib/img/rota.jpg" width="50em" height="50em">
+                                </a>
+
+                            </td>
+                        </tr>
+                        <tr id="detalhe-00424430" class="oculta">
+                            <td class="detalhe-agencia td-detalhe-agencia" colspan="3">
+                                <table class="sombreado">
+                                    <tr class="sombreado"><td class="td-detalhe-agencia"> Bairro: CENTRO</td></tr>
+                                    <tr class="sombreado"><td class="td-detalhe-agencia">CEP: 01022-970</td></tr>
+                                    <tr class="sombreado">
+                                        <td class="td-detalhe-agencia">
+                                            <!--<span class="negrito">Fale com os Correios:</span>  Para falar com nossos canais de atendimento, <a href="https://www.correios.com.br/fale-com-os-correios/central-de-atendimento" target="_blank">clique aqui</a>. Alteração realizada em 05/07/2021 - demanda 110742-->
+                                            <span class="negrito">Fale com os Correios:</span>  Para falar com nossos canais de atendimento, <a href="https://www.correios.com.br/falecomoscorreios/central-de-atendimento" target="_blank">clique aqui</a>.
+                                        </td>
+                                    </tr>
+                                    <tr class="sombreado">
+                                        <td class="td-detalhe-agencia">
+                                            Segunda a sexta:<br>09:00 às 17:00
+                                        </td>
+                                    </tr>
+
+
+                                    <tr class="sombreado">
+                                        <td class="td-detalhe-agencia">
+                                            Sábado:<br>08:00 às 12:00
+                                        </td>
+                                    </tr>
+
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <input type="hidden" name="plantao_sabado" value="0">
+                    <input type="hidden" name=plantao_domingo" value="0">
+                    <input type="hidden" name="sabado" value="1">
+                    <input type="hidden" name="domingo" value="0">
+
+                    <input type="hidden" name="certificado" value="0">
+                    <input type="hidden" name="cpf" value="0">
+                    <input type="hidden" name="achados" value="0">
+                    <input type="hidden" name="guiches" value="0">
+
+                    <input type="hidden" name="atendimento" value="0">
+                </table>
+            </td>
+        </tr>
+
+
+
+        <tr id="base-00424365" class="tr-base">
+            <td colspan="3" class="celula-base">
+                <table>
+                    <tbody class="tbody-interno">
+                        <tr>
+                            <td class="agencia_desc">
+                                <!--a href="#"-->
+                                <span class="nome-agencia" onclick="mostraDetalhe('00424365');">AGF BOA VISTA</span>
+                                <span class="endereco-agencia" onclick="mostraDetalhe('00424365');">RUA BOA VISTA, 88</span>
+                                <!--/a-->
+                                <span class="clique-retire">
+                                    <span onclick="mostraDetalhe('00424365');">Para o Clique e Retire dos Correios utilize o CEP: <span class="destaque-cr">01014-959</span></span>
+                                    <img style="vertical-align: middle" src="lib/img/info_clique_retire.jpg" onclick="mostraMensagemCliqueRetire('00424365')">
+                                </span>
+                                <span class="mensagem-clique-retire oculta" id="00424365">
+                                    Não está em casa para receber sua encomenda e quer retirar na Agência dos Correios <span class="destaque-cr">AGF BOA VISTA</span> ? <br>
+                                    Utilize gratuitamente o serviço Clique e Retire dos Correios.<br>
+                                    Indique o CEP <span class="destaque-cr">01014-959</span> e o endereço da <span class="destaque-cr">RUA BOA VISTA, 88</span> em suas compras na internet.<br>
+                                    <a href="https://www.correios.com.br/enviar-e-receber/encomendas/clique-e-retire#tab-1" target="_blank">Clique e retire dos Correios!</a> Simples assim!
+                                </span>
+                                <span class="situacao-agencia" onclick="mostraDetalhe('00424365');">FECHADA - Abre Segunda às 09:00</span>
+                            </td>
+
+                            <td class="lista-servico">
+                            </td>
+                            <td class="rota">
+                                <a class="maps" href="https://www.google.com/maps?saddr=-23.5469093 ,-46.6355037&daddr=-23.5469093,-46.6355037" target="_blank" title="Definir Rota">
+                                    <img src="lib/img/rota.jpg" width="50em" height="50em">
+                                </a>
+
+                            </td>
+                        </tr>
+                        <tr id="detalhe-00424365" class="oculta">
+                            <td class="detalhe-agencia td-detalhe-agencia" colspan="3">
+                                <table class="sombreado">
+                                    <tr class="sombreado"><td class="td-detalhe-agencia"> Bairro: CENTRO</td></tr>
+                                    <tr class="sombreado"><td class="td-detalhe-agencia">CEP: 01014-970</td></tr>
+                                    <tr class="sombreado">
+                                        <td class="td-detalhe-agencia">
+                                            <!--<span class="negrito">Fale com os Correios:</span>  Para falar com nossos canais de atendimento, <a href="https://www.correios.com.br/fale-com-os-correios/central-de-atendimento" target="_blank">clique aqui</a>. Alteração realizada em 05/07/2021 - demanda 110742-->
+                                            <span class="negrito">Fale com os Correios:</span>  Para falar com nossos canais de atendimento, <a href="https://www.correios.com.br/falecomoscorreios/central-de-atendimento" target="_blank">clique aqui</a>.
+                                        </td>
+                                    </tr>
+                                    <tr class="sombreado">
+                                        <td class="td-detalhe-agencia">
+                                            Segunda a sexta:<br>09:00 às 17:00
+                                        </td>
+                                    </tr>
+
+
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <input type="hidden" name="plantao_sabado" value="0">
+                    <input type="hidden" name=plantao_domingo" value="0">
+                    <input type="hidden" name="sabado" value="0">
+                    <input type="hidden" name="domingo" value="0">
+
+                    <input type="hidden" name="certificado" value="0">
+                    <input type="hidden" name="cpf" value="0">
+                    <input type="hidden" name="achados" value="0">
+                    <input type="hidden" name="guiches" value="0">
+
+                    <input type="hidden" name="atendimento" value="0">
+                </table>
+            </td>
+        </tr>
+
+
+
+        <tr id="base-00237078" class="tr-base">
+            <td colspan="3" class="celula-base">
+                <table>
+                    <tbody class="tbody-interno">
+                        <tr>
+                            <td class="agencia_desc">
+                                <!--a href="#"-->
+                                <span class="nome-agencia" onclick="mostraDetalhe('00237078');">AGF DOUTOR JOAO MENDES</span>
+                                <span class="endereco-agencia" onclick="mostraDetalhe('00237078');">PRACA DOUTOR JOAO MENDES, 32</span>
+                                <!--/a-->
+                                <span class="clique-retire">
+                                    <span onclick="mostraDetalhe('00237078');">Para o Clique e Retire dos Correios utilize o CEP: <span class="destaque-cr">01501-959</span></span>
+                                    <img style="vertical-align: middle" src="lib/img/info_clique_retire.jpg" onclick="mostraMensagemCliqueRetire('00237078')">
+                                </span>
+                                <span class="mensagem-clique-retire oculta" id="00237078">
+                                    Não está em casa para receber sua encomenda e quer retirar na Agência dos Correios <span class="destaque-cr">AGF DOUTOR JOAO MENDES</span> ? <br>
+                                    Utilize gratuitamente o serviço Clique e Retire dos Correios.<br>
+                                    Indique o CEP <span class="destaque-cr">01501-959</span> e o endereço da <span class="destaque-cr">PRACA DOUTOR JOAO MENDES, 32</span> em suas compras na internet.<br>
+                                    <a href="https://www.correios.com.br/enviar-e-receber/encomendas/clique-e-retire#tab-1" target="_blank">Clique e retire dos Correios!</a> Simples assim!
+                                </span>
+                                <span class="situacao-agencia" onclick="mostraDetalhe('00237078');">FECHADA - Abre Segunda às 09:00</span>
+                            </td>
+
+                            <td class="lista-servico">
+                            </td>
+                            <td class="rota">
+                                <a class="maps" href="https://www.google.com/maps?saddr=-23.5514112 ,-46.6354739&daddr=-23.5514112,-46.6354739" target="_blank" title="Definir Rota">
+                                    <img src="lib/img/rota.jpg" width="50em" height="50em">
+                                </a>
+
+                            </td>
+                        </tr>
+                        <tr id="detalhe-00237078" class="oculta">
+                            <td class="detalhe-agencia td-detalhe-agencia" colspan="3">
+                                <table class="sombreado">
+                                    <tr class="sombreado"><td class="td-detalhe-agencia"> Bairro: CENTRO</td></tr>
+                                    <tr class="sombreado"><td class="td-detalhe-agencia">CEP: 01501-970</td></tr>
+                                    <tr class="sombreado">
+                                        <td class="td-detalhe-agencia">
+                                            <!--<span class="negrito">Fale com os Correios:</span>  Para falar com nossos canais de atendimento, <a href="https://www.correios.com.br/fale-com-os-correios/central-de-atendimento" target="_blank">clique aqui</a>. Alteração realizada em 05/07/2021 - demanda 110742-->
+                                            <span class="negrito">Fale com os Correios:</span>  Para falar com nossos canais de atendimento, <a href="https://www.correios.com.br/falecomoscorreios/central-de-atendimento" target="_blank">clique aqui</a>.
+                                        </td>
+                                    </tr>
+                                    <tr class="sombreado">
+                                        <td class="td-detalhe-agencia">
+                                            Segunda a sexta:<br>09:00 às 17:00
+                                        </td>
+                                    </tr>
+
+
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <input type="hidden" name="plantao_sabado" value="0">
+                    <input type="hidden" name=plantao_domingo" value="0">
+                    <input type="hidden" name="sabado" value="0">
+                    <input type="hidden" name="domingo" value="0">
+
+                    <input type="hidden" name="certificado" value="0">
+                    <input type="hidden" name="cpf" value="0">
+                    <input type="hidden" name="achados" value="0">
+                    <input type="hidden" name="guiches" value="0">
+
+                    <input type="hidden" name="atendimento" value="0">
+                </table>
+            </td>
+        </tr>
+
+
+
+        <tr id="base-00435133" class="tr-base">
+            <td colspan="3" class="celula-base">
+                <table>
+                    <tbody class="tbody-interno">
+                        <tr>
+                            <td class="agencia_desc">
+                                <!--a href="#"-->
+                                <span class="nome-agencia" onclick="mostraDetalhe('00435133');">LOCKER ESTACAO DA LUZ</span>
+                                <span class="endereco-agencia" onclick="mostraDetalhe('00435133');">AVENIDA CASPER LIBERO, 598</span>
+                                <!--/a-->
+                                <span class="situacao-agencia" onclick="mostraDetalhe('00435133');">Fechada - Agência Sem Expediente</span>
+                            </td>
+
+                            <td class="lista-servico">
+                            </td>
+                            <td class="rota">
+                                <img src="lib/img/rota.jpg" width="50em" height="50em" class="cinza" title="Não foi possível definir a rota de acesso de forma automática">
+
+                            </td>
+                        </tr>
+                        <tr id="detalhe-00435133" class="oculta">
+                            <td class="detalhe-agencia td-detalhe-agencia" colspan="3">
+                                <table class="sombreado">
+                                    <tr class="sombreado"><td class="td-detalhe-agencia"> Bairro: CENTRO</td></tr>
+                                    <tr class="sombreado"><td class="td-detalhe-agencia">CEP: 01033-989</td></tr>
+                                    <tr class="sombreado">
+                                        <td class="td-detalhe-agencia">
+                                            <!--<span class="negrito">Fale com os Correios:</span>  Para falar com nossos canais de atendimento, <a href="https://www.correios.com.br/fale-com-os-correios/central-de-atendimento" target="_blank">clique aqui</a>. Alteração realizada em 05/07/2021 - demanda 110742-->
+                                            <span class="negrito">Fale com os Correios:</span>  Para falar com nossos canais de atendimento, <a href="https://www.correios.com.br/falecomoscorreios/central-de-atendimento" target="_blank">clique aqui</a>.
+                                        </td>
+                                    </tr>
+                                    <tr class="sombreado">
+                                        <td class="td-detalhe-agencia">
+                                            Segunda a sexta:<br>04:40 às 23:59
+                                        </td>
+                                    </tr>
+
+
+                                    <tr class="sombreado">
+                                        <td class="td-detalhe-agencia">
+                                            Sábado:<br>04:40 às 23:59
+                                        </td>
+                                    </tr>
+
+                                    <tr class="sombreado">
+                                        <td class="td-detalhe-agencia">
+                                            Domingo:<br>04:40 às 23:59
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <input type="hidden" name="plantao_sabado" value="0">
+                    <input type="hidden" name=plantao_domingo" value="0">
+                    <input type="hidden" name="sabado" value="1">
+                    <input type="hidden" name="domingo" value="1">
+
+                    <input type="hidden" name="certificado" value="0">
+                    <input type="hidden" name="cpf" value="0">
+                    <input type="hidden" name="achados" value="0">
+                    <input type="hidden" name="guiches" value="0">
+
+                    <input type="hidden" name="atendimento" value="0">
+                </table>
+            </td>
+        </tr>
+
+
+    </tbody>
+</table>
