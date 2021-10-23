@@ -5,17 +5,37 @@ using System.Threading.Tasks;
 
 namespace DotNet.Agencias.Correios
 {
+    /// <summary>
+    /// Classe com função que busca informaçãoes das agências dos Correios.
+    /// </summary>
     public class AgenciasCorreios : IAgenciasCorreios
     {
         private readonly IHttpClientWrapper _httpClient;
         private readonly HtmlDocument _document;
 
+        /// <summary>
+        /// Construtor para instanciar a classe HttpClientWrapper via injeção de dependência.
+        /// </summary>
+        /// <param name="httpClientWrapper">Objeto HttpClientWrapper</param>
         public AgenciasCorreios(IHttpClientWrapper httpClientWrapper)
         {
             _httpClient = httpClientWrapper;
             _document = new HtmlDocument();
         }
 
+        /// <summary>
+        /// Busca as agências localizadas de acordo com
+        /// os parâmetros informados.
+        /// </summary>
+        /// <param name="uf">UF do Estado.</param>
+        /// <param name="municipio">Município.</param>
+        /// <param name="bairro">Bairro.</param>
+        /// <returns>Objeto do tipo Agencias</returns>
+        /// <exception cref="HttpRequestException">HttpRequestException</exception>
+        /// <exception cref="HtmlWebException">HtmlWebException</exception>
+        /// <exception cref="IndexOutOfRangeException">IndexOutOfRangeException</exception>
+        /// <exception cref="ArgumentNullException">ArgumentNullException</exception>
+        /// 
         public async Task<Agencias> GetAgenciasAsync(string uf, string municipio, string bairro)
         {
             ValidaParametros(uf, municipio, bairro);

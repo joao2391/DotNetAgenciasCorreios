@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DotNet.Agencias.Correios</name>
+    </assembly>
+    <members>
+        <member name="T:DotNet.Agencias.Correios.Agencia">
+            <summary>
+            Classe Agencia
+            </summary>
+        </member>
+        <member name="P:DotNet.Agencias.Correios.Agencia.Nome">
+            <summary>
+            Nome da Agencia encontrada
+            </summary>
+        </member>
+        <member name="P:DotNet.Agencias.Correios.Agencia.Endereco">
+            <summary>
+            Endereco da Agencia encontrada
+            </summary>
+        </member>
+        <member name="P:DotNet.Agencias.Correios.Agencia.CEP">
+            <summary>
+            CEP da Agencia encontrada
+            </summary>
+        </member>
+        <member name="P:DotNet.Agencias.Correios.Agencia.Situacao">
+            <summary>
+            Situação da Agencia encontrada
+            Exemplo:
+            Aberta ou Fechada
+            </summary>
+        </member>
+        <member name="T:DotNet.Agencias.Correios.Agencias">
+            <summary>
+            Classe que é retornada
+            </summary>
+        </member>
+        <member name="P:DotNet.Agencias.Correios.Agencias.AgenciasEncontradas">
+            <summary>
+            Array de Agencia
+            </summary>
+        </member>
+        <member name="T:DotNet.Agencias.Correios.AgenciasCorreios">
+            <summary>
+            Classe com função que busca informaçãoes das agências dos Correios.
+            </summary>
+        </member>
+        <member name="M:DotNet.Agencias.Correios.AgenciasCorreios.#ctor(DotNet.Agencias.Correios.IHttpClientWrapper)">
+            <summary>
+            Construtor para instanciar a classe HttpClientWrapper via injeção de dependência.
+            </summary>
+            <param name="httpClientWrapper">Objeto HttpClientWrapper</param>
+        </member>
+        <member name="M:DotNet.Agencias.Correios.AgenciasCorreios.GetAgenciasAsync(System.String,System.String,System.String)">
+            <summary>
+            Busca as agências localizadas de acordo com
+            os parâmetros informados.
+            </summary>
+            <param name="uf">UF do Estado.</param>
+            <param name="municipio">Município.</param>
+            <param name="bairro">Bairro.</param>
+            <returns>Objeto do tipo Agencias</returns>
+            <exception cref="T:System.Net.Http.HttpRequestException">HttpRequestException</exception>
+            <exception cref="T:HtmlAgilityPack.HtmlWebException">HtmlWebException</exception>
+            <exception cref="T:System.IndexOutOfRangeException">IndexOutOfRangeException</exception>
+            <exception cref="T:System.ArgumentNullException">ArgumentNullException</exception>
+            
+        </member>
+        <member name="T:DotNet.Agencias.Correios.Constants">
+            <summary>
+            Classe de Constants
+            </summary>
+        </member>
+        <member name="F:DotNet.Agencias.Correios.Constants.NODE_AGENCIAS">
+            <summary>
+            XPath da tabela onde ficam as agências
+            </summary>
+        </member>
+        <member name="T:DotNet.Agencias.Correios.HttpClientWrapper">
+            <summary>
+            Classe utilizada para abstrair as chamadas HTTP
+            </summary>
+        </member>
+        <member name="M:DotNet.Agencias.Correios.HttpClientWrapper.#ctor">
+            <summary>
+            Construtor padrão
+            </summary>
+        </member>
+        <member name="M:DotNet.Agencias.Correios.HttpClientWrapper.GetAsync(System.String,System.String,System.String)">
+            <summary>
+            Realiza a chamada GET para a url
+            dos Correios
+            </summary>
+            <param name="uf">UF do Estado</param>
+            <param name="municipio">Município</param>
+            <param name="bairro">Bairro</param>
+            <returns>Task de HttpResponseMessage</returns>
+        </member>
+        <member name="T:DotNet.Agencias.Correios.IAgenciasCorreios">
+            <summary>
+            Interface para a classe AgenciasCorreios
+            </summary>
+        </member>
+        <member name="M:DotNet.Agencias.Correios.IAgenciasCorreios.GetAgenciasAsync(System.String,System.String,System.String)">
+            <summary>
+            Método responsável por chamar a url
+            dos Correios.
+            </summary>
+            <param name="uf">UF do Estado</param>
+            <param name="municipio">Município</param>
+            <param name="bairro">Bairro</param>
+            <returns>Task de Agencias</returns>
+        </member>
+        <member name="T:DotNet.Agencias.Correios.IHttpClientWrapper">
+            <summary>
+            Interface do HttpClientWrapper
+            </summary>
+        </member>
+        <member name="M:DotNet.Agencias.Correios.IHttpClientWrapper.GetAsync(System.String,System.String,System.String)">
+            <summary>
+            Método responsável por chamar a url
+            dos Correios.
+            </summary>
+            <param name="uf">UF do Estado</param>
+            <param name="municipio">Município</param>
+            <param name="bairro">Bairro</param>
+            <returns>Task de HttpResponseMessage</returns>
+        </member>
+    </members>
+</doc>
