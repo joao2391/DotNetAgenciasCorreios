@@ -12,7 +12,7 @@ Version 1.0.1:
 Use the package manager to install.
 
 ```bash
-Install-Package DotNetAgenciasCorreios  -Version 1.0.0
+Install-Package DotNetAgenciasCorreios  -Version 1.0.1
 ```
 
 ## Usage
