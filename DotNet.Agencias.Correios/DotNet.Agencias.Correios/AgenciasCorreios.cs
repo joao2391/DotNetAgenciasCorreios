@@ -72,12 +72,12 @@ namespace DotNet.Agencias.Correios
 
             if (string.IsNullOrEmpty(municipio))
             {
-                throw new ArgumentNullException(municipio, "UF não pode ser vazio");
+                throw new ArgumentNullException(municipio, "municipio não pode ser vazio");
             }
 
             if (string.IsNullOrEmpty(bairro))
             {
-                throw new ArgumentNullException(bairro, "UF não pode ser vazio");
+                throw new ArgumentNullException(bairro, "bairro não pode ser vazio");
             }
         }
 

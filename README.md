@@ -3,9 +3,9 @@
 DotNet.Agencias.Correios is a .Net library that helps you to get brazilian's mail agency.
 
 ## Notes
-Version 1.0.0:
+Version 1.0.1:
 
-- BETA
+- Upgrade to .NET 6
 
 ## Installation
 
