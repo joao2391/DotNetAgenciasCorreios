@@ -26,7 +26,7 @@ services.<ChooseYours><IAgenciasCorreios, AgenciasCorreios>();
 ### Features
 You will get an object with an object's array with Nome, CEP, Endereço and Situação
 ```C#
-var agencias = GetAgenciasAsync();
+var agencias = GetAgenciasAsync("SP", "Sao Paulo", "Centro");
 // agencias.Agencia[0].Nome -> AC CENTRAL DE SAO PAULO
 // agencias.Agencia[0].CEP -> 01031-959
 // agencias.Agencia[0].Endereco -> PRACA DO CORREIO, SN
