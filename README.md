@@ -13,7 +13,7 @@ Version 2.0.0
 Use the package manager to install.
 
 ```bash
-Install-Package DotNetAgenciasCorreios  -Version 1.0.1
+Install-Package DotNetAgenciasCorreios  -Version 2.0.0
 ```
 
 ## Usage
