@@ -15,7 +15,7 @@ namespace DotNet.Agencias.Correios.Test
 
         public AgenciasCorreiosTests()
         {
-            fakeContent = File.ReadAllText(@".\FakeData.html");
+            fakeContent = File.ReadAllText(@"./FakeData.html");
         }
 
         [Fact]
